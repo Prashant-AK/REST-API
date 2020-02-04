@@ -1,0 +1,24 @@
+{{!-- The content for the app's index view which will be rendered into the layout's {{{body}}}. --}}
+
+<h1 class="text-center mt-4">{{title}}</h1>
+
+{{!-- Creating form  by using 2 label, 2 input, 1 button --}}
+<form action="/prashant" method="POST">
+    <div class="form-group">
+        <label name="name">Name</label>
+        <input type="text" class="form-control" name="name" placeholder="Enter the Name"/>
+    </div>
+        <div class="form-group">
+        <label name="email">Email</label>
+        <input type="email" class="form-control" name="email" placeholder="Enter the Email"/>
+    </div>
+    <button type="submit" class="btn btn-primary btn-block">Submit</button>
+</form>
+
+{{!-- Show data of the stored members data --}}
+
+<ul class="list-group">
+{{#each members}}
+<li class="list-group-item">{{this.name}} : {{this.email}}</li>
+{{/each}}
+</ul>
